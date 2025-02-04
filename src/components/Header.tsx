@@ -2,10 +2,15 @@
 import { SetStateAction, useState } from 'react';
 import Link from 'next/link';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
+import { FiShoppingCart } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const item = useSelector((state: RootState) => state.cart);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const handleSearchChange = (e: { target: { value: SetStateAction<string>; }; }) => setSearchTerm(e.target.value);
@@ -39,12 +44,12 @@ const Navbar = () => {
           </div>
 
           {/* Cart Icon */}
-          <Link href="/cart" className="relative">
-            <FaShoppingCart className="text-2xl hover:text-gray-400 transition duration-200" />
-            {/* Badge for Cart Item Count */}
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-1">3</span>
-          </Link>
-        </div>
+          </div>
+        <Link href="/cart"><FiShoppingCart className="text-2xl cursor-pointer mr-2" /></Link>
+        {item.length}
+        <FiUser className="text-2xl cursor-pointer" />
+        <FiShoppingCart size={24} color="black" />
+        
 
         {/* Mobile Menu Button */}
         <button onClick={toggleMenu} className="md:hidden text-2xl">
