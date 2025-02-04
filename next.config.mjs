@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    images: {
+      domains: ["cdn.sanity.io"],
+    },
+    // Optional: Add other configurations below
+    reactStrictMode: true,
+    typescript: {
+      ignoreBuildErrors: false,
+    },
+  };
+  
+  export default nextConfig;
