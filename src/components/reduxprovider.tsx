@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import { Provider } from "react-redux";
-import store from "@/app/redux/store"; // Import your store
+import store from "@/app/redux/Store"; // Import your store
 
 // Define the Provider wrapper
 const ReduxProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
