@@ -3,7 +3,7 @@ import { SetStateAction, useState } from 'react';
 import Link from 'next/link';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { useSelector } from "react-redux";
-import { RootState } from "@/app/redux/store";
+import { RootState } from "@/app/redux/Store";
 import { FiShoppingCart } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 
